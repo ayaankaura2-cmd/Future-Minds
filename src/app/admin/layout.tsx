@@ -3,14 +3,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  ShieldCheck, 
-  LayoutDashboard, 
-  Users, 
-  BookOpen, 
-  CheckCircle2, 
-  FileText, 
-  KeyRound, 
+import {
+  ShieldCheck,
+  LayoutDashboard,
+  Users,
+  BookOpen,
+  CheckCircle2,
+  FileText,
+  KeyRound,
   ArrowLeft,
   Sliders,
   Sparkles
@@ -25,6 +25,7 @@ export default function AdminLayout({
 
   const navItems = [
     { label: 'Overview', href: '/admin', icon: LayoutDashboard },
+    { label: 'Registrations', href: '/admin/registrations', icon: Users },
     { label: 'Applications', href: '/admin/applications', icon: Users },
     { label: 'Programs & Cohorts', href: '/admin/programs', icon: BookOpen },
     { label: 'Project Moderation', href: '/admin/projects', icon: CheckCircle2 },
@@ -82,11 +83,10 @@ export default function AdminLayout({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-colors whitespace-nowrap ${
-                  active
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-colors whitespace-nowrap ${active
                     ? 'bg-[#10233F] text-white shadow-xs'
                     : 'text-[#18365A] hover:bg-[#E5F4F6]'
-                }`}
+                  }`}
               >
                 <Icon className={`w-4 h-4 ${active ? 'text-[#19C6D2]' : 'text-[#7187A8]'}`} />
                 <span>{item.label}</span>
